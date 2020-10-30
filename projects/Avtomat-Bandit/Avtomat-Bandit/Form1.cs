@@ -12,7 +12,7 @@ namespace Avtomat_Bandit
 {
     public partial class Form1 : Form
     {
-        int balance = 100; //Исходный баланс.
+        int balance = 10000; //Исходный баланс.
         int counter_money = 0; //Текущий ставка.
         int counter_try = 0; //Счетчик попыток.
         int win_money = 0; //Выигранные деньги.
@@ -102,15 +102,16 @@ namespace Avtomat_Bandit
             if (label1.Text == "5" && label2.Text == "5" && label3.Text == "5") Upd_Win_Money(14);
             if (label1.Text == "6" && label2.Text == "6" && label3.Text == "6") Upd_Win_Money(15);
             if (label1.Text == "7" && label2.Text == "7" && label3.Text == "7") Upd_Win_Money(20);
-            if ((label1.Text == "0" && label2.Text == "0") || (label2.Text == "0" && label3.Text == "0")) Upd_Win_Money(7);
-            if ((label1.Text == "1" && label2.Text == "1") || (label2.Text == "1" && label3.Text == "1")) Upd_Win_Money(1);
-            if ((label1.Text == "2" && label2.Text == "2") || (label2.Text == "2" && label3.Text == "2")) Upd_Win_Money(2);
-            if ((label1.Text == "3" && label2.Text == "3") || (label2.Text == "3" && label3.Text == "3")) Upd_Win_Money(3);
-            if ((label1.Text == "4" && label2.Text == "4") || (label2.Text == "4" && label3.Text == "4")) Upd_Win_Money(4);
-            if ((label1.Text == "5" && label2.Text == "5") || (label2.Text == "5" && label3.Text == "5")) Upd_Win_Money(5);
-            if ((label1.Text == "6" && label2.Text == "6") || (label2.Text == "6" && label3.Text == "6")) Upd_Win_Money(6);
-            if ((label1.Text == "7" && label2.Text == "7") || (label2.Text == "7" && label3.Text == "7")) Upd_Win_Money(10);
-        }
+            if ((label1.Text == "0" && label2.Text == "0") || (label2.Text == "0" && label3.Text == "0") || (label1.Text == "0" && label3.Text == "0"))Upd_Win_Money(7);
+            if ((label1.Text == "1" && label2.Text == "1") || (label2.Text == "1" && label3.Text == "1") || (label1.Text == "0" && label3.Text == "0"))Upd_Win_Money(1);
+            if ((label1.Text == "2" && label2.Text == "2") || (label2.Text == "2" && label3.Text == "2") || (label1.Text == "0" && label3.Text == "0"))Upd_Win_Money(2);
+            if ((label1.Text == "3" && label2.Text == "3") || (label2.Text == "3" && label3.Text == "3") || (label1.Text == "0" && label3.Text == "0")) Upd_Win_Money(3);
+            if ((label1.Text == "4" && label2.Text == "4") || (label2.Text == "4" && label3.Text == "4") || (label1.Text == "0" && label3.Text == "0")) Upd_Win_Money(4);
+            if ((label1.Text == "5" && label2.Text == "5") || (label2.Text == "5" && label3.Text == "5") || (label1.Text == "0" && label3.Text == "0"))Upd_Win_Money(5);
+            if ((label1.Text == "6" && label2.Text == "6") || (label2.Text == "6" && label3.Text == "6") || (label1.Text == "0" && label3.Text == "0"))Upd_Win_Money(6);
+            if ((label1.Text == "7" && label2.Text == "7") || (label2.Text == "7" && label3.Text == "7") || (label1.Text == "0" && label3.Text == "0")) Upd_Win_Money(10);
+     
+    }
         private void Upd_Win_Money(int number)
         {
             win_money = counter_money * number; //умножаем ставку на коэффициент получаем кол-во выигранных денег
