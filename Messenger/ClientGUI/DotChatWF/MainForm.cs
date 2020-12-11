@@ -34,7 +34,8 @@ namespace DotChatWF
         {
             Message msg = GetMessage(lastMsgID);
             if (msg != null) {
-                listMessages.Items.Add($"[{msg.username}] {msg.text}");
+                
+                listMessages.Items.Add($"{DateTime.Now.ToShortTimeString()} [{msg.username}] {msg.text}");
                 lastMsgID++;
             }
         }
@@ -45,11 +46,13 @@ namespace DotChatWF
         MessageBox.Show("Please log in or register");
         }
       else 
-      { 
-            SendMessage(new Message() { 
-                username = fieldUsername.Text,
-                text = fieldMessage.Text,
-            });
+      {
+                SendMessage(new Message()
+                {
+                    username = fieldUsername.Text,
+                    text = fieldMessage.Text,
+                    
+                }) ;
               
             }
     }
