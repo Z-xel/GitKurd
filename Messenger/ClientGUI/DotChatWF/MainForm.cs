@@ -41,16 +41,17 @@ namespace DotChatWF
 
         private void btnSend_Click(object sender, EventArgs e) {
             if (int_token == 0)
-      {
+        {
         MessageBox.Show("Please log in or register");
-      }
+        }
       else 
       { 
             SendMessage(new Message() { 
                 username = fieldUsername.Text,
                 text = fieldMessage.Text,
             });
-      }
+              
+            }
     }
 
         // Отправляет сообщение на сервер
@@ -74,6 +75,7 @@ namespace DotChatWF
             try
             {
                 WebRequest req = WebRequest.Create($"http://localhost:5000/api/chat/{id}");
+                req.Method = "GET";
                 WebResponse resp = req.GetResponse();
                 string smsg = new StreamReader(resp.GetResponseStream()).ReadToEnd();
 
