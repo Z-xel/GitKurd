@@ -59,6 +59,12 @@ namespace DotChatWF
           mForm.TextBox_username.Text = auth_data.login;
           mForm.Show();
           this.Visible = false;
+          SendMessage(new Message()
+          {
+             username = auth_data.login,
+             text = " присоединился к чату",
+
+          });
         }
         else
         {
@@ -76,8 +82,20 @@ namespace DotChatWF
     {
 
     }
-
-    private void RegistartionForm_FormClosed(object sender, FormClosedEventArgs e)
+        void SendMessage(Message msg)
+        {
+            WebRequest req = WebRequest.Create("http://localhost:5000/api/chat");
+            req.Method = "POST";
+            string postData = JsonConvert.SerializeObject(msg);
+            //byte[] bytes = Encoding.UTF8.GetBytes(postData);
+            req.ContentType = "application/json";
+            //req.ContentLength = bytes.Length;
+            StreamWriter reqStream = new StreamWriter(req.GetRequestStream());
+            reqStream.Write(postData);
+            reqStream.Close();
+            req.GetResponse();
+        }
+        private void RegistartionForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       mForm.Show();
       this.Visible = false;

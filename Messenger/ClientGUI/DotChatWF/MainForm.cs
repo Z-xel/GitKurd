@@ -45,8 +45,8 @@ namespace DotChatWF
         {
         MessageBox.Show("Please log in or register");
         }
-      else 
-      {
+            else 
+            {
                 SendMessage(new Message()
                 {
                     username = fieldUsername.Text,
