@@ -1,0 +1,7 @@
+D:\Games\repos\ASCII\bin\Debug\ASCII.exe.config
+D:\Games\repos\ASCII\bin\Debug\ASCII.exe
+D:\Games\repos\ASCII\bin\Debug\ASCII.pdb
+D:\Games\repos\ASCII\obj\Debug\ASCII.csprojAssemblyReference.cache
+D:\Games\repos\ASCII\obj\Debug\ASCII.csproj.CoreCompileInputs.cache
+D:\Games\repos\ASCII\obj\Debug\ASCII.exe
+D:\Games\repos\ASCII\obj\Debug\ASCII.pdb
