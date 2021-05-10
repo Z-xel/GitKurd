@@ -17,7 +17,7 @@ namespace SQLapp
 
     private void ExitButton_Click(object sender, EventArgs e)
     {
-      Close();
+      Application.Exit();
     }
 
     private void ExitButton_MouseEnter(object sender, EventArgs e)
@@ -60,6 +60,7 @@ namespace SQLapp
 
     private void buttonLogin_Click(object sender, EventArgs e)
     {
+ 
       DB db = new DB();
       DataTable table = new DataTable();
       MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -68,10 +69,19 @@ namespace SQLapp
       command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passField.Text;
       adapter.SelectCommand = command;
       adapter.Fill(table);
-      if (table.Rows.Count > 0) 
-        MessageBox.Show("Yes");
+      if (table.Rows.Count > 0)
+      { Hide();
+        MainForm mainForm = new MainForm();
+        mainForm.Show();  }
       else
         MessageBox.Show("No");
+    }
+
+    private void RegisterLabel_Click(object sender, EventArgs e)
+    {
+      Hide();
+      RegisterForm registerForm = new RegisterForm();
+      registerForm.Show();
     }
   }
 }

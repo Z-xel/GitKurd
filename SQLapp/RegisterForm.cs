@@ -26,7 +26,7 @@ namespace SQLapp
 
     private void ExitButton_Click(object sender, EventArgs e)
     {
-      Close();
+      Application.Exit();
     }
 
     private void ExitButton_MouseEnter(object sender, EventArgs e)
@@ -146,8 +146,12 @@ namespace SQLapp
       db.openConnection();
 
 
-      if (command.ExecuteNonQuery() == 1) 
-        MessageBox.Show("Аккаунт был создан"); 
+      if (command.ExecuteNonQuery() == 1)
+      {
+        Hide();
+        MainForm mainForm = new MainForm();
+        mainForm.Show();
+      }
       else 
         MessageBox.Show("Аккаунт не был создан");
 
@@ -172,6 +176,13 @@ namespace SQLapp
       else {
         return false;
           };
+    }
+
+    private void label2_Click(object sender, EventArgs e)
+    {
+      Hide();
+      LoginForm loginForm = new LoginForm();
+      loginForm.Show();
     }
   }
 }

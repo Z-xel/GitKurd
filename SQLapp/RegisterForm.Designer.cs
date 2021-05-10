@@ -38,6 +38,7 @@ namespace SQLapp
       this.loginField = new System.Windows.Forms.TextBox();
       this.pictureBox2 = new System.Windows.Forms.PictureBox();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.label2 = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
@@ -150,12 +151,25 @@ namespace SQLapp
       this.pictureBox1.TabIndex = 16;
       this.pictureBox1.TabStop = false;
       // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+      this.label2.Location = new System.Drawing.Point(333, 358);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(129, 16);
+      this.label2.TabIndex = 20;
+      this.label2.Text = "Уже есть аккаунт?";
+      this.label2.Click += new System.EventHandler(this.label2_Click);
+      // 
       // RegisterForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.WindowFrame;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.label2);
       this.Controls.Add(this.passField);
       this.Controls.Add(this.pictureBox2);
       this.Controls.Add(this.loginField);
@@ -187,5 +201,6 @@ namespace SQLapp
     private System.Windows.Forms.PictureBox pictureBox2;
     private System.Windows.Forms.TextBox loginField;
     private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.Label label2;
   }
 }
