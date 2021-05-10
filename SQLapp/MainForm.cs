@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using MySql.Data.MySqlClient;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace SQLapp
@@ -46,6 +43,17 @@ namespace SQLapp
         Left += e.X - lastPoint.X;
         Top += e.Y - lastPoint.Y;
       }
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      DB db = new DB();
+      DataTable table = new DataTable();
+      MySqlDataAdapter adapter = new MySqlDataAdapter();
+      MySqlCommand command = new MySqlCommand("SELECT * FROM `users`", db.getConnection());
+      adapter.SelectCommand = command;
+      adapter.Fill(table);
+      dataGridView1.DataSource = table;
     }
   }
 }
